@@ -6,8 +6,10 @@ This page was built from an RMarkdown file. The code below runs every time the b
 summary(cars)
 ```
 
-Here is a plot of the built-in cars dataset:
+```{r}
+library(DBI)
+```
 
 ```{r}
-plot(cars)
+library(DBI)
 ```
