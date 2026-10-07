@@ -28,7 +28,7 @@ jobs:
 
       - name: Install R package dependencies
         run: |
-          install.packages(c("bookdown", "rmarkdown"))
+          install.packages(c("bookdown", "rmarkdown", "DBI"))
         shell: Rscript {0}
 
       - name: Render book
