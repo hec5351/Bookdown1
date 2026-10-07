@@ -1,0 +1,7 @@
+# My First Chapter
+
+This page was built from an RMarkdown file. The code below runs every time the book is built.
+
+```{r}
+summary(cars)
+```

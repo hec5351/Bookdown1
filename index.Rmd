@@ -1,0 +1,9 @@
+---
+title: "My First Book"
+site: bookdown::bookdown_site
+---
+
+# Welcome {-}
+
+This is my first book, published with GitHub Pages.
+

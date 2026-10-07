@@ -1,0 +1,5 @@
+book_filename: "my-first-book"
+output_dir: "docs"
+delete_merged_file: true
+rmd_files: ["index.Rmd", "01-first-chapter.Rmd"]
+
