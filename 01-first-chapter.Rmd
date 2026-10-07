@@ -5,3 +5,9 @@ This page was built from an RMarkdown file. The code below runs every time the b
 ```{r}
 summary(cars)
 ```
+
+Here is a plot of the built-in cars dataset:
+
+```{r}
+plot(cars)
+```
