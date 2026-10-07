@@ -1,4 +1,5 @@
 setwd("/Users/haleyecurtis/WFS597/Bookdown")
+library(DBI)
 
 # Create the folders (the hidden .github/workflows folders are created too)
 dir.create("my-first-book/.github/workflows", recursive = TRUE)
@@ -35,10 +36,11 @@ browseURL("docs/index.html")
 
 # _bookdown.yml: which files make up the book, and where the finished website goes
 writeLines(r"(book_filename: "my-first-book"
-output_dir: "docs"
 delete_merged_file: true
+output_dir: "docs"
 rmd_files: ["index.Rmd", "01-first-chapter.Rmd"]
 )", "my-first-book/_bookdown.yml")
+
 
 # _output.yml: the output format (a GitBook-style website)
 writeLines(r"(bookdown::gitbook:
@@ -125,3 +127,8 @@ cat("\n", fence, "{r}\nlibrary(DBI)\n", fence, "\n", sep = "", file = "01-first-
 
 fence <- "```"
 cat("\n", fence, "{r}\nlibrary(DBI)\n", fence, "\n", sep = "", file = "01-first-chapter.Rmd", append = TRUE)
+wf <- readLines(".github/workflows/publish.yml")
+wf <- sub('install.packages(c("bookdown", "rmarkdown"))',
+          'install.packages(c("bookdown", "rmarkdown", "DBI"))',
+          wf, fixed = TRUE)
+writeLines(wf, ".github/workflows/publish.yml")
